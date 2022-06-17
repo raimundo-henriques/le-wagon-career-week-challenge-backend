@@ -1,0 +1,10 @@
+<div style="margin: 100px">
+  <% @museums["features"].each do |museum| %>
+    <% if @results_hash.key?(museum["context"][0]["text"]) %>
+      <% @results_hash[museum["context"][0]["text"]] << museum["text"] %>
+    <% else %>
+      <% @results_hash[museum["context"][0]["text"]] = [museum["text"]] %>
+    <% end %>
+  <% end %>
+  <%= @results_hash.to_json %>
+</div>

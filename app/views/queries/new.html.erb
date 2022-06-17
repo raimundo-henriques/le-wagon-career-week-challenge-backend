@@ -1,0 +1,7 @@
+<div style="margin-top: 100px" data-controller="mapbox">
+  <%= simple_form_for @query do |f|  %>
+    <%= f.input :lat, data: { mapbox_target: "lat" } %>
+    <%= f.input :lng, data: { mapbox_target: "lng" }  %>
+    <%= f.button :submit %>
+  <% end %>
+</div>
